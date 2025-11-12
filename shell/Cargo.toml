@@ -1,0 +1,19 @@
+[package]
+name = "lucianos-shell"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gtk = { version = "0.9", features = ["v4_14"] }
+libadwaita = { version = "0.7", features = ["v1_5"] }
+glib = "0.20"
+gdk = "0.9"
+gio = "0.19"
+wayland-client = "0.31"
+
+[dev-dependencies]
+# TBD: add testing frameworks
+
+[[bin]]
+name = "lucianos-shell"
+path = "src/main.rs"

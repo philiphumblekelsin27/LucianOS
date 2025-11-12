@@ -1,0 +1,65 @@
+name: LucianOS CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - deploy/hub
+  pull_request:
+    branches:
+      - main
+      - deploy/hub
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: false
+        default: '0.1.0'
+      approve_release:
+        description: 'Set to true to perform signing + release upload'
+        required: false
+        default: 'false'
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ github.event.inputs.version || '0.1.0' }}
+      APPROVE_RELEASE: ${{ github.event.inputs.approve_release || 'false' }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y bash git curl jq qemu-utils packer buildah gpg
+
+    - name: Import GPG key (placeholder)
+      if: env.APPROVE_RELEASE == 'true'
+      env:
+        GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      run: |
+        echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+
+    - name: Dry-run build
+      run: |
+        bash ./deploy_all.sh --version $VERSION --dry-run
+
+    - name: Full deployment
+      if: env.APPROVE_RELEASE == 'true'
+      run: |
+        bash ./deploy_all.sh --version $VERSION
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: lucianos-build-${{ env.VERSION }}
+        path: |
+          build/lucianos-v${{ env.VERSION }}.iso
+          build/lucianos-v${{ env.VERSION }}.iso.asc
+          build/sha256sum.txt
+          build/build.log
+
+    # Optional: add notifications (Slack/Discord) here

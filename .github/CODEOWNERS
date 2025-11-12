@@ -1,0 +1,17 @@
+# CODEOWNERS — assigns default reviewers
+# Set repository owners and team leads. Use GitHub usernames or team slugs.
+
+# Root owners (Project Lead)
+*    @philiphumblekelsin27
+
+# Kernel changes should be reviewed by platform lead
+/kernel/   @philiphumblekelsin27
+
+# Shell and UI changes
+/shell/    @philiphumblekelsin27
+
+# AI / STAR core (proprietary) - restricted
+/ai/       @philiphumblekelsin27
+
+# CI and release
+/ci/       @philiphumblekelsin27

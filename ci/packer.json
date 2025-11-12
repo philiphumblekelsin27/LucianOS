@@ -1,0 +1,26 @@
+{
+  "builders": [
+    {
+      "type": "qemu",
+      "iso_url": "https://example.com/debian-minimal.iso",
+      "iso_checksum": "sha256:abc123...",
+      "disk_size": 5120,
+      "memory": 2048,
+      "cpus": 2,
+      "output_directory": "../build",
+      "vm_name": "lucianos-0.1.0.iso",
+      "headless": true,
+      "accelerator": "kvm"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "./scripts/setup_rootfs.sh",
+        "./scripts/install_shell.sh",
+        "./scripts/install_ai.sh"
+      ]
+    }
+  ]
+}

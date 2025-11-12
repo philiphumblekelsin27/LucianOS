@@ -1,0 +1,50 @@
+LucianOS Proprietary License v1.0
+
+Copyright (c) 2025 Philip Humble Kelsin Lucian (Carlineil)
+
+This LucianOS Proprietary License governs the use, reproduction,
+distribution, and modification of the following components of the
+LucianOS project:
+
+- Branding (name, logos, trademarked assets)
+- Visual assets (icons, themes, UI designs, dark neon theme)
+- AI / STAR core modules (models, adapters, proprietary orchestration)
+- Any modules explicitly marked as "proprietary" in the repository
+
+Grant of limited rights
+-----------------------
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of the proprietary components and associated documentation files (the
+"Proprietary Materials"), to use the Proprietary Materials for personal,
+educational, or internal development purposes only, subject to the
+following conditions:
+
+1. Redistribution of the Proprietary Materials, in whole or in part, is
+   prohibited without the express prior written permission of the copyright
+   holder.
+
+2. Commercial use, sale, sublicensing, or incorporation of the Proprietary
+   Materials into products for sale is prohibited unless a separate
+   commercial license has been obtained from the copyright holder.
+
+3. Modification of the Proprietary Materials for internal use is permitted,
+   but any distribution of modified versions (even internally to third
+   parties) is prohibited unless express permission is granted.
+
+4. Attribution: Any use of the Proprietary Materials in demonstrations or
+   marketing materials must credit LucianOS and/or Philip Humble Kelsin
+   as the original author where practical.
+
+Disclaimer of Warranty
+----------------------
+THE PROPRIETARY MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+THE PROPRIETARY MATERIALS OR THE USE OR OTHER DEALINGS IN THE
+PROPRIETARY MATERIALS.
+
+Contact
+-------
+Requests for licensing, commercial use, or other permissions should be
+addressed to: humblekelsin271977@gmail.com (replace with official contact).
